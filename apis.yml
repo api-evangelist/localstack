@@ -1,9 +1,27 @@
 aid: localstack
 name: LocalStack
-description: 'LocalStack is a company surfaced as a portfolio company of ggv-capital and added to the
-  API Evangelist network as a stub for enrichment. Sector: developer-tools. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: >-
+  LocalStack is a cloud service emulator that runs in a single container on your laptop or in your
+  CI environment, providing a local test and mocking framework for developing cloud applications
+  against AWS, Snowflake, and Azure without provisioning real infrastructure. It ships a CLI, a
+  Docker image, IaC integrations (Terraform, CDK, SAM, CloudFormation, Pulumi), an official MCP
+  server and Agent Skills, and a local REST API for diagnostics, health checks, service
+  introspection, and retrospective access to emulated AWS resources (SES, SNS, SQS, Lambda,
+  DynamoDB, EventBridge, CloudWatch). Backed by GGV Capital.
 url: https://raw.githubusercontent.com/api-evangelist/localstack/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://github.com/localstack.png
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
@@ -12,11 +30,38 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
 - Developer Tools
-apis: []
+- Cloud
+- AWS
+- Emulator
+- Testing
+- DevOps
+- Serverless
+- Infrastructure
+apis:
+- aid: localstack:localstack-aws-api
+  name: LocalStack Aws API
+  description: The Aws API from LocalStack — 11 operation(s) for aws.
+  humanURL: https://docs.localstack.cloud/references/internal-endpoints/
+  baseURL: http://localhost.localstack.cloud:4566
+  tags:
+  - Aws
+  properties:
+  - type: OpenAPI
+    url: openapi/localstack-aws-api-openapi.yml
+- aid: localstack:localstack-localstack-api
+  name: LocalStack localstack API
+  description: The localstack API from LocalStack — 8 operation(s) for localstack.
+  humanURL: https://docs.localstack.cloud/references/internal-endpoints/
+  baseURL: http://localhost.localstack.cloud:4566
+  tags:
+  - localstack
+  properties:
+  - type: OpenAPI
+    url: openapi/localstack-localstack-api-openapi.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -25,3 +70,66 @@ maintainers:
 common:
 - type: Website
   url: https://www.localstack.cloud/
+- type: DeveloperPortal
+  url: https://docs.localstack.cloud/
+- type: Documentation
+  url: https://docs.localstack.cloud/
+- type: APIReference
+  url: https://docs.localstack.cloud/references/internal-endpoints/
+- type: GettingStarted
+  url: https://docs.localstack.cloud/aws/getting-started/
+- type: Blog
+  url: https://blog.localstack.cloud/
+- type: GitHubOrganization
+  url: https://github.com/localstack
+- type: Support
+  url: https://www.localstack.cloud/contact
+- type: Pricing
+  url: https://www.localstack.cloud/pricing
+- type: SignUp
+  url: https://app.localstack.cloud/sign-in
+- type: TermsOfService
+  url: https://www.localstack.cloud/legal/tos
+- type: PrivacyPolicy
+  url: https://www.localstack.cloud/legal/privacy-policy
+- type: StatusPage
+  url: https://status.localstack.cloud
+- type: ChangeLog
+  url: changelog/localstack-changelog.yml
+- type: Packages
+  url: packages/localstack-packages.yml
+- type: SDKs
+  url: packages/localstack-packages.yml
+- type: CLI
+  url: cli/localstack-cli.yml
+- type: MCPServer
+  url: mcp/localstack-mcp.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: WellKnown
+  url: well-known/localstack-well-known.yml
+- type: APICatalog
+  url: well-known/localstack-api-catalog.json
+- type: LLMsTxt
+  url: llms/localstack-llms.txt
+- type: Authentication
+  url: authentication/localstack-authentication.yml
+- type: Conventions
+  url: conventions/localstack-conventions.yml
+- type: ErrorCatalog
+  url: errors/localstack-problem-types.yml
+- type: Conformance
+  url: conformance/localstack-conformance.yml
+- type: Lifecycle
+  url: lifecycle/localstack-lifecycle.yml
+- type: DataModel
+  url: data-model/localstack-data-model.yml
+- type: AgenticAccess
+  url: agentic-access/localstack-agentic-access.yml
+- type: DomainSecurity
+  url: security/localstack-domain-security.yml
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 20
+  pass: local-v1
