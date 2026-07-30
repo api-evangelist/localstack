@@ -1,0 +1,32 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.localstack.cloud/.well-known/agent-skills/index.json
+description: >-
+  Official LocalStack Agent Skills, published by the provider and fetched verbatim from the
+  Agent Skills discovery index (RFC v0.2.0) at docs.localstack.cloud and the localstack/skills
+  GitHub repository. Skills are grounded in the LocalStack CLI + MCP tool surface.
+skills:
+  - file: localstack-lifecycle.md
+    name: localstack-lifecycle
+    description: Manage LocalStack container lifecycle (start, stop, status, restart).
+    source: https://raw.githubusercontent.com/localstack/skills/main/skills/localstack-lifecycle/SKILL.md
+  - file: localstack-iac-deployment.md
+    name: iac-deployment
+    description: Deploy infrastructure using Terraform, CDK, CloudFormation, and Pulumi.
+    source: https://raw.githubusercontent.com/localstack/skills/main/skills/iac-deployment/SKILL.md
+  - file: localstack-state-management.md
+    name: state-management
+    description: Save, load, and manage LocalStack state with Cloud Pods.
+    source: https://raw.githubusercontent.com/localstack/skills/main/skills/state-management/SKILL.md
+  - file: localstack-logs-analysis.md
+    name: logs-analysis
+    description: Analyze LocalStack logs, identify errors, and debug issues.
+    source: https://raw.githubusercontent.com/localstack/skills/main/skills/logs-analysis/SKILL.md
+  - file: localstack-iam-policy-analyzer.md
+    name: iam-policy-analyzer
+    description: Analyze IAM policies and auto-generate least-privilege permissions.
+    source: https://raw.githubusercontent.com/localstack/skills/main/skills/iam-policy-analyzer/SKILL.md
+  - file: localstack-extensions.md
+    name: localstack-extensions
+    description: Manage LocalStack extensions and plugins.
+    source: https://raw.githubusercontent.com/localstack/skills/main/skills/localstack-extensions/SKILL.md

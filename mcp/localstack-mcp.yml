@@ -1,0 +1,50 @@
+generated: '2026-07-20'
+method: searched
+status: published
+source: >-
+  https://docs.localstack.cloud/.well-known/mcp/server-card.json,
+  https://github.com/localstack/localstack-mcp-server
+server:
+  name: io.github.localstack/localstack-mcp-server
+  title: LocalStack MCP Server
+  version: 0.3.0
+  transport: stdio
+  protocol_versions: ['2025-06-18']
+  package: "@localstack/localstack-mcp-server"
+  registry: npm
+  install: npx -y @localstack/localstack-mcp-server init
+  repository: https://github.com/localstack/localstack-mcp-server
+  website: https://docs.localstack.cloud/
+  server_card: well-known/localstack-mcp-server-card.json
+  environment:
+    - name: LOCALSTACK_AUTH_TOKEN
+      required: true
+      secret: true
+      description: LocalStack Auth Token (required for all MCP tools).
+  capabilities:
+    tools: true
+    resources: false
+    prompts: false
+tools:
+  - name: localstack-management
+    description: Start, stop, restart, and monitor LocalStack containers.
+  - name: localstack-deployer
+    description: Deploy infrastructure via CDK, Terraform, SAM, or CloudFormation.
+  - name: localstack-logs-analysis
+    description: Analyze logs for errors and API activity.
+  - name: localstack-iam-policy-analyzer
+    description: Configure IAM enforcement and generate least-privilege policies.
+  - name: localstack-chaos-injector
+    description: Inject faults and latency for resilience testing.
+  - name: localstack-cloud-pods
+    description: Save and load state snapshots (Cloud Pods).
+  - name: localstack-aws-client
+    description: Execute AWS CLI commands via awslocal.
+  - name: localstack-extensions
+    description: Manage LocalStack extensions from the marketplace.
+  - name: localstack-ephemeral-instances
+    description: Create and manage cloud-hosted ephemeral instances.
+  - name: localstack-docs
+    description: Search LocalStack documentation.
+  - name: localstack-snowflake-client
+    description: Execute SQL queries against the Snowflake emulator.

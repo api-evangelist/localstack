@@ -1,0 +1,53 @@
+generated: '2026-07-20'
+method: searched
+source: >-
+  https://pypi.org/project/localstack/, https://docs.localstack.cloud/aws/integrations/aws-native-tools/localstack-cli/,
+  https://github.com/localstack/lstk, https://github.com/localstack/awscli-local
+clis:
+  - name: localstack
+    binary: localstack
+    package: packages/localstack-packages.yml#localstack
+    language: python
+    install:
+      - pip install localstack
+      - brew install localstack/tap/localstack-cli
+    requires: Docker
+    description: Primary CLI to run and manage the LocalStack container.
+    command_groups:
+      - name: core
+        commands: [start, stop, restart, status, wait, logs, ssh, update, completion]
+      - name: config
+        commands: [config show, config validate]
+      - name: state
+        commands: [state export, state import, state reset]
+      - name: pod
+        commands: [pod save, pod load, pod list, pod delete]
+      - name: license
+        commands: [login, logout, license activate, license info]
+      - name: extensions
+        commands: [extensions init, extensions install, extensions list, extensions uninstall]
+  - name: lstk
+    binary: lstk
+    package: packages/localstack-packages.yml#localstack/lstk
+    language: go
+    install:
+      - brew install localstack/tap/localstack-cli
+    description: Newer Go-based LocalStack CLI with a modern terminal UI.
+  - name: awslocal
+    binary: awslocal
+    package: packages/localstack-packages.yml#awscli-local
+    language: python
+    install: [pip install awscli-local]
+    description: Thin wrapper around the AWS CLI that targets the LocalStack endpoint.
+  - name: tflocal
+    binary: tflocal
+    package: packages/localstack-packages.yml#terraform-local
+    language: python
+    install: [pip install terraform-local]
+    description: Wrapper that runs Terraform against LocalStack.
+  - name: samlocal
+    binary: samlocal
+    package: packages/localstack-packages.yml#aws-sam-cli-local
+    language: python
+    install: [pip install aws-sam-cli-local]
+    description: Wrapper around the AWS SAM CLI for LocalStack.

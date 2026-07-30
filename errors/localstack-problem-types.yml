@@ -1,0 +1,34 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/localstack-openapi-original.yml
+format: none
+envelope: >-
+  The LocalStack REST API returns plain JSON (or text/xml for SQS retrospective endpoints).
+  4xx responses are not RFC 9457 problem+json. SNS subscription-token errors use a small
+  {error, subscription_arn} object (schema SnsSubscriptionTokenError).
+problems:
+  - status: 400
+    title: Bad request
+    media_types: [application/json, text/xml, text/plain]
+    source_operations:
+      - openapi/localstack-openapi-original.yml#update_config_option
+      - openapi/localstack-openapi-original.yml#get_sns_subscription_token
+      - openapi/localstack-openapi-original.yml#list_all_sqs_messages
+      - openapi/localstack-openapi-original.yml#receive_message
+      - openapi/localstack-openapi-original.yml#list_sqs_messages
+      - openapi/localstack-openapi-original.yml#manage_session
+  - status: 404
+    title: Not found
+    media_types: [application/json, text/xml, text/plain]
+    source_operations:
+      - openapi/localstack-openapi-original.yml#trigger_event_bridge_rule
+      - openapi/localstack-openapi-original.yml#get_sns_subscription_token
+      - openapi/localstack-openapi-original.yml#list_all_sqs_messages
+      - openapi/localstack-openapi-original.yml#list_sqs_messages
+      - openapi/localstack-openapi-original.yml#get_config
+      - openapi/localstack-openapi-original.yml#update_config_option
+      - openapi/localstack-openapi-original.yml#get_init_script_info_stage
+schemas:
+  - name: SnsSubscriptionTokenError
+    fields: [error, subscription_arn]
+    used_by: [get_sns_subscription_token]

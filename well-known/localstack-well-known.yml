@@ -1,0 +1,40 @@
+generated: '2026-07-20'
+method: searched
+source: live probes of /.well-known/ across LocalStack hosts
+hosts:
+  - host: https://docs.localstack.cloud
+    documents:
+      - path: /.well-known/api-catalog          # RFC 9727
+        status: 200
+        file: localstack-api-catalog.json
+      - path: /.well-known/mcp/server-card.json  # MCP Server Card (SEP-2127)
+        status: 200
+        file: localstack-mcp-server-card.json
+      - path: /.well-known/agent-skills/index.json  # Agent Skills discovery (RFC v0.2.0)
+        status: 200
+        file: localstack-agent-skills-index.json
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+  - host: https://www.localstack.cloud
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+notes: >-
+  app.localstack.cloud returns HTTP 200 with text/html for every /.well-known/ path
+  (single-page-app catch-all), so those are not real discovery documents and are not indexed.
+  The docs host publishes a genuine machine-readable discovery surface: an RFC 9727 api-catalog
+  that in turn points at /llms.txt, an MCP Server Card, and an Agent Skills index.

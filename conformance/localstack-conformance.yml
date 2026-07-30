@@ -1,0 +1,29 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/localstack-openapi-original.yml
+standards:
+  - id: openapi-3.1
+    conforms: true
+    evidence: openapi 3.1.0 document published at localstack-core/localstack/openapi.yaml
+  - id: json-schema-2020-12
+    conforms: true
+    evidence: OpenAPI 3.1 uses JSON Schema 2020-12 dialect for component schemas
+  - id: oauth2
+    conforms: false
+    evidence: no oauth2 securityScheme in spec; local REST API is unauthenticated
+  - id: oidc
+    conforms: false
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: 4xx responses are plain (text/xml or application/json), not application/problem+json
+  - id: json-api
+    conforms: false
+  - id: rfc9727-api-catalog
+    conforms: true
+    evidence: docs.localstack.cloud/.well-known/api-catalog publishes a machine-readable catalog
+  - id: mcp
+    conforms: true
+    evidence: official MCP server + MCP Server Card (SEP-2127) published at /.well-known/mcp/server-card.json
+  - id: aws-service-api-compat
+    conforms: true
+    evidence: emulates AWS service APIs (the product's core purpose); AWS SDKs/CLI work unmodified against LocalStack

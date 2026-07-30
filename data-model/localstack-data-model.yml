@@ -1,0 +1,47 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/localstack-openapi-original.yml
+entities:
+  - name: SessionInfo
+    description: Metadata about the running LocalStack session (edition, version, machine, uptime).
+    used_by: [get_session_info, get_diagnostics]
+  - name: InitScripts
+    description: Init-script execution state across BOOT/START/READY/SHUTDOWN stages.
+    used_by: [get_init_script_info]
+  - name: SesSentEmail
+    description: A captured SES outbound email.
+    used_by: [get_ses_messages]
+  - name: SESDestination
+    description: To/Cc/Bcc recipients of an SES message.
+  - name: SNSMessage
+    description: An SNS message (topic, phone, subscription, attributes).
+    used_by: [get_sns_sms_messages]
+  - name: SNSPlatformEndpointMessage
+    description: A message published to an SNS platform endpoint.
+    used_by: [get_sns_endpoint_messages]
+  - name: Message
+    description: An SQS queue message (body, receipt handle, attributes).
+    used_by: [list_all_sqs_messages, receive_message, list_sqs_messages]
+  - name: CloudWatchMetrics
+    description: Raw CloudWatch metric datapoints (namespace, name, dimensions, value, timestamp).
+    used_by: [get_cloudwatch_metrics]
+relationships:
+  - from: SesSentEmail
+    to: SESDestination
+    type: has_one
+    via: Destination
+  - from: SNSPlatformEndpointResponse
+    to: SNSPlatformEndpointMessage
+    type: has_many
+    via: platform_endpoint_messages
+  - from: SNSSMSMessagesResponse
+    to: SNSMessage
+    type: has_many
+    via: sms_messages
+  - from: ReceiveMessageResult
+    to: Message
+    type: has_many
+    via: Messages
+notes: >-
+  These are diagnostic/retrospective payloads over emulated AWS services, keyed by AWS
+  identifiers (ARNs, region, account_id, queue_name) rather than a single relational domain.

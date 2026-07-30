@@ -1,0 +1,16 @@
+{
+  "provider": "localstack",
+  "sources": [
+    "localstack-aws-api-openapi.yml",
+    "localstack-localstack-api-openapi.yml"
+  ],
+  "outputs": [
+    "localstack-aws-api-openapi.yml",
+    "localstack-localstack-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

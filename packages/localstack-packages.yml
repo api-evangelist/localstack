@@ -1,0 +1,60 @@
+generated: '2026-07-20'
+method: searched
+source: PyPI, npm, Docker Hub, GitHub (localstack org)
+packages:
+  - language: python
+    registry: pypi
+    name: localstack
+    url: https://pypi.org/project/localstack/
+    install: pip install localstack
+    description: The LocalStack CLI and core cloud emulator.
+    official: true
+  - language: python
+    registry: pypi
+    name: awscli-local
+    url: https://pypi.org/project/awscli-local/
+    install: pip install awscli-local
+    description: "`awslocal` wrapper around the AWS CLI pointed at LocalStack."
+    official: true
+  - language: python
+    registry: pypi
+    name: terraform-local
+    url: https://pypi.org/project/terraform-local/
+    install: pip install terraform-local
+    description: "`tflocal` wrapper that runs Terraform against LocalStack."
+    official: true
+  - language: python
+    registry: pypi
+    name: aws-sam-cli-local
+    url: https://pypi.org/project/aws-sam-cli-local/
+    install: pip install aws-sam-cli-local
+    description: "`samlocal` wrapper around the AWS SAM CLI for LocalStack."
+    official: true
+  - language: javascript
+    registry: npm
+    name: "@localstack/localstack-mcp-server"
+    url: https://www.npmjs.com/package/@localstack/localstack-mcp-server
+    install: npx -y @localstack/localstack-mcp-server init
+    description: Official LocalStack Model Context Protocol (MCP) server.
+    official: true
+  - language: javascript
+    registry: npm
+    name: serverless-localstack
+    url: https://www.npmjs.com/package/serverless-localstack
+    install: npm install -D serverless-localstack
+    description: Serverless Framework plugin that targets LocalStack.
+    official: true
+  - language: docker
+    registry: docker-hub
+    name: localstack/localstack
+    url: https://hub.docker.com/r/localstack/localstack
+    install: docker pull localstack/localstack
+    description: Primary LocalStack container image.
+    official: true
+  - language: go
+    registry: github
+    name: localstack/lstk
+    url: https://github.com/localstack/lstk
+    install: brew install localstack/tap/localstack-cli
+    description: New Go-based LocalStack CLI (lstk) with a terminal UI.
+    official: true

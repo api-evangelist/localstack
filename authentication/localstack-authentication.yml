@@ -1,0 +1,27 @@
+generated: '2026-07-20'
+method: searched
+source: >-
+  openapi/localstack-openapi-original.yml, https://docs.localstack.cloud/,
+  https://docs.localstack.cloud/.well-known/mcp/server-card.json
+summary:
+  types: [none, auth-token]
+  notes: >-
+    Two distinct surfaces. (1) The LocalStack REST API for Community (the local emulator control
+    plane at localhost.localstack.cloud:4566) declares NO securitySchemes and requires no
+    authentication — it is bound to the developer's own machine. (2) The LocalStack platform and
+    licensed (Pro/Ultimate/Enterprise) features are activated with a LocalStack Auth Token.
+schemes:
+  - name: none
+    type: none
+    scope: local REST API (openapi/localstack-openapi-original.yml)
+    detail: Unauthenticated; no securitySchemes defined in the OpenAPI document.
+  - name: auth-token
+    type: apiKey
+    in: environment
+    parameter: LOCALSTACK_AUTH_TOKEN
+    scope: platform activation + MCP server + licensed features
+    secret: true
+    docs: https://docs.localstack.cloud/aws/getting-started/auth-token/
+    detail: >-
+      The Auth Token is supplied via the LOCALSTACK_AUTH_TOKEN environment variable to the
+      container and to the MCP server (marked isRequired + isSecret in the MCP Server Card).

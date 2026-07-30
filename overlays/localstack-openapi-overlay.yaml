@@ -1,0 +1,27 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for LocalStack REST API
+  version: 1.0.0
+extends: openapi/localstack-openapi-original.yml
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-rating: 3
+      x-apievangelist-notes: >-
+        LocalStack REST API for Community. Local diagnostics/introspection control plane exposed
+        by the emulator container at localhost.localstack.cloud:4566. No authentication on the
+        local endpoints; the LocalStack platform uses an Auth Token for licensed features.
+  - target: $.info
+    update:
+      x-apievangelist-artifacts:
+        mcp: mcp/localstack-mcp.yml
+        skills: skills/_index.yml
+        errors: errors/localstack-problem-types.yml
+        conventions: conventions/localstack-conventions.yml
+        data-model: data-model/localstack-data-model.yml
+  - target: $.tags
+    update:
+      - name: aws
+        description: Retrospective/introspection endpoints for emulated AWS services (SES, SNS, SQS, Lambda, DynamoDB, EventBridge, CloudWatch).
+      - name: localstack
+        description: LocalStack control-plane endpoints (health, config, diagnostics, init, plugins, usage, session).

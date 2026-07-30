@@ -1,0 +1,16 @@
+generated: '2026-07-20'
+method: searched
+source: >-
+  https://github.com/localstack/localstack/releases, https://pypi.org/project/localstack/,
+  https://docs.localstack.cloud/aws/getting-started/help-and-support/
+scheme: calver
+current_version: 2026.6.1
+current_version_released: '2026-07-01'
+changelog_url: https://github.com/localstack/localstack/releases
+notes: >-
+  LocalStack publishes a dated release history on GitHub Releases (per-tag notes) and ships the
+  CLI/core to PyPI. Versioning transitioned from semantic (v4.x) to calendar versioning
+  (YYYY.M.patch). The live GitHub Releases feed and PyPI release history are the source of truth
+  for the recent window; specific dated entries are intentionally not transcribed here to avoid
+  drift from that feed.
+entries: []

@@ -1,0 +1,28 @@
+generated: '2026-07-20'
+method: searched
+source: >-
+  https://pypi.org/project/localstack/, https://status.localstack.cloud,
+  https://github.com/localstack/localstack/releases, openapi/localstack-openapi-original.yml
+versioning:
+  scheme: calver
+  current: 2026.6.1
+  notes: >-
+    LocalStack moved from semantic versioning (v4.x) to calendar versioning (YYYY.M.patch).
+    The OpenAPI document reports version "latest".
+  docs: https://docs.localstack.cloud/aws/getting-started/help-and-support/
+status_page: https://status.localstack.cloud
+status_page_provider: Atlassian Statuspage
+status_components:
+  - LocalStack Platform
+  - LocalStack WebApp
+sla:
+  url: https://www.localstack.cloud/legal/tos
+  notes: No public numeric uptime SLA; Enterprise plans carry contractual support terms.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: >-
+    No formal API deprecation policy / RFC 8594 Sunset headers found for the local REST API.
+    Lambda runtime deprecation is surfaced at the data level via the get_lambda_runtimes
+    `filter=deprecated` query parameter.
+deprecated_operations: []
