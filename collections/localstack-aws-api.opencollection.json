@@ -1,0 +1,340 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "LocalStack REST API for Community Aws API",
+    "version": "latest"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Aws",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "list_all_sqs_messages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/_aws/sqs/messages",
+            "params": [
+              {
+                "name": "QueueUrl",
+                "value": "",
+                "type": "query",
+                "description": "SQS queue URL"
+              }
+            ]
+          },
+          "docs": "List SQS queue messages without side effects"
+        },
+        {
+          "info": {
+            "name": "Retrieves one or more messages from the specified queue.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{host}:{port}/_aws/sqs/messages",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This API receives messages from an SQS queue.\nhttps://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html#API_ReceiveMessage_ResponseSyntax\n"
+        },
+        {
+          "info": {
+            "name": "get_cloudwatch_metrics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/_aws/cloudwatch/metrics/raw"
+          },
+          "docs": "Retrieve CloudWatch metrics"
+        },
+        {
+          "info": {
+            "name": "delete_ddb_expired_items",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://{host}:{port}/_aws/dynamodb/expired"
+          },
+          "docs": "Delete expired items from TTL-enabled DynamoDB tables"
+        },
+        {
+          "info": {
+            "name": "trigger_event_bridge_rule",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/_aws/events/rules/:rule_arn/trigger",
+            "params": [
+              {
+                "name": "rule_arn",
+                "value": "",
+                "type": "path",
+                "description": "EventBridge rule ARN"
+              }
+            ]
+          },
+          "docs": "Trigger a scheduled EventBridge rule"
+        },
+        {
+          "info": {
+            "name": "get_lambda_init",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/_aws/lambda/init"
+          },
+          "docs": "Retrieve Lambda runtime init binary"
+        },
+        {
+          "info": {
+            "name": "get_lambda_runtimes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/_aws/lambda/runtimes",
+            "params": [
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List available Lambda runtimes"
+        },
+        {
+          "info": {
+            "name": "get_ses_messages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/_aws/ses",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "Filter for the `id` field in SES message"
+              },
+              {
+                "name": "email",
+                "value": "",
+                "type": "query",
+                "description": "Filter for the `source` field in SES message"
+              }
+            ]
+          },
+          "docs": "Retrieve sent SES messages"
+        },
+        {
+          "info": {
+            "name": "discard_ses_messages",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://{host}:{port}/_aws/ses",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "Filter for the `id` field in SES message"
+              }
+            ]
+          },
+          "docs": "Discard sent SES messages"
+        },
+        {
+          "info": {
+            "name": "get_sns_endpoint_messages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/_aws/sns/platform-endpoint-messages",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "query",
+                "description": "`accountId` field of the resource"
+              },
+              {
+                "name": "region",
+                "value": "",
+                "type": "query",
+                "description": "`region` field of the resource"
+              },
+              {
+                "name": "endpointArn",
+                "value": "",
+                "type": "query",
+                "description": "`endpointArn` field of the resource"
+              }
+            ]
+          },
+          "docs": "Retrieve the messages sent to a platform endpoint via SNS"
+        },
+        {
+          "info": {
+            "name": "discard_sns_endpoint_messages",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://{host}:{port}/_aws/sns/platform-endpoint-messages",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "query",
+                "description": "`accountId` field of the resource"
+              },
+              {
+                "name": "region",
+                "value": "",
+                "type": "query",
+                "description": "`region` field of the resource"
+              },
+              {
+                "name": "endpointArn",
+                "value": "",
+                "type": "query",
+                "description": "`endpointArn` field of the resource"
+              }
+            ]
+          },
+          "docs": "Discard the messages published to a platform endpoint via SNS"
+        },
+        {
+          "info": {
+            "name": "get_sns_sms_messages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/_aws/sns/sms-messages",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "query",
+                "description": "`accountId` field of the resource"
+              },
+              {
+                "name": "region",
+                "value": "",
+                "type": "query",
+                "description": "`region` field of the resource"
+              },
+              {
+                "name": "phoneNumber",
+                "value": "",
+                "type": "query",
+                "description": "`phoneNumber` field of the resource"
+              }
+            ]
+          },
+          "docs": "Retrieve SNS SMS messages"
+        },
+        {
+          "info": {
+            "name": "discard_sns_sms_messages",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://{host}:{port}/_aws/sns/sms-messages",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "query",
+                "description": "`accountId` field of the resource"
+              },
+              {
+                "name": "region",
+                "value": "",
+                "type": "query",
+                "description": "`region` field of the resource"
+              },
+              {
+                "name": "phoneNumber",
+                "value": "",
+                "type": "query",
+                "description": "`phoneNumber` field of the resource"
+              }
+            ]
+          },
+          "docs": "Discard SNS SMS messages"
+        },
+        {
+          "info": {
+            "name": "get_sns_subscription_token",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/_aws/sns/subscription-tokens/:subscription_arn",
+            "params": [
+              {
+                "name": "subscription_arn",
+                "value": "",
+                "type": "path",
+                "description": "`subscriptionArn` resource of subscription token"
+              }
+            ]
+          },
+          "docs": "Retrieve SNS subscription token for confirmation"
+        },
+        {
+          "info": {
+            "name": "list_sqs_messages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/_aws/sqs/messages/:region/:account_id/:queue_name",
+            "params": [
+              {
+                "name": "region",
+                "value": "",
+                "type": "path",
+                "description": "SQS queue region"
+              },
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "path",
+                "description": "SQS queue account ID"
+              },
+              {
+                "name": "queue_name",
+                "value": "",
+                "type": "path",
+                "description": "SQS queue name"
+              }
+            ]
+          },
+          "docs": "List SQS messages without side effects"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

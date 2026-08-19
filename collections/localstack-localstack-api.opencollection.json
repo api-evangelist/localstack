@@ -1,0 +1,173 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "REST API for Community Aws localstack API",
+    "version": "latest"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "localstack",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "get_config",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/_localstack/config"
+          },
+          "docs": "Get current LocalStack configuration"
+        },
+        {
+          "info": {
+            "name": "update_config_option",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{host}:{port}/_localstack/config",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Configuration option to update with new value"
+        },
+        {
+          "info": {
+            "name": "get_diagnostics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/_localstack/diagnose"
+          },
+          "docs": "Get diagnostics report"
+        },
+        {
+          "info": {
+            "name": "get_features_and_services",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/_localstack/health",
+            "params": [
+              {
+                "name": "reload",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get available LocalStack features and AWS services"
+        },
+        {
+          "info": {
+            "name": "manage_session",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{host}:{port}/_localstack/health",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Restart or terminate LocalStack session"
+        },
+        {
+          "info": {
+            "name": "store_data",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://{host}:{port}/_localstack/health",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Store arbitrary data to in-memory state"
+        },
+        {
+          "info": {
+            "name": "health",
+            "type": "http"
+          },
+          "http": {
+            "method": "HEAD",
+            "url": "http://{host}:{port}/_localstack/health"
+          }
+        },
+        {
+          "info": {
+            "name": "get_session_info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/_localstack/info"
+          },
+          "docs": "Get information about the current LocalStack session"
+        },
+        {
+          "info": {
+            "name": "get_init_script_info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/_localstack/init"
+          },
+          "docs": "Get information about init scripts"
+        },
+        {
+          "info": {
+            "name": "get_init_script_info_stage",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/_localstack/init/:stage",
+            "params": [
+              {
+                "name": "stage",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get information about init scripts in a specific stage"
+        },
+        {
+          "info": {
+            "name": "get_plugins",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/_localstack/plugins"
+          }
+        },
+        {
+          "info": {
+            "name": "get_usage",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/_localstack/usage"
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

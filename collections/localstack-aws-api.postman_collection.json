@@ -1,0 +1,2782 @@
+{
+  "item": [
+    {
+      "id": "b28c13ee-68f3-4f49-a482-7e478076ffad",
+      "name": "Aws",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8c23d409-6078-4bc8-b631-882de2ddb6b1",
+          "name": "Retrieves one or more messages from the specified queue.",
+          "request": {
+            "name": "Retrieves one or more messages from the specified queue.",
+            "description": {
+              "content": "This API receives messages from an SQS queue.\nhttps://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html#API_ReceiveMessage_ResponseSyntax\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "_aws",
+                "sqs",
+                "messages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "QueueUrl",
+                  "value": "<uri>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "AttributeNames",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "AttributeNames",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "MessageSystemAttributeNames",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "MessageSystemAttributeNames",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "MessageAttributeNames",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "MessageAttributeNames",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "MaxNumberOfMessages",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "VisibilityTimeout",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "WaitTimeSeconds",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ReceiveRequestAttemptId",
+                  "value": "<string>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "1f1eb872-b788-46cb-a0fc-1ce5cfc837cd",
+              "name": "SQS queue messages",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "_aws",
+                    "sqs",
+                    "messages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "QueueUrl",
+                      "value": "<uri>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "AttributeNames",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "AttributeNames",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "MessageSystemAttributeNames",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "MessageSystemAttributeNames",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "MessageAttributeNames",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "MessageAttributeNames",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "MaxNumberOfMessages",
+                      "value": "<integer>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "VisibilityTimeout",
+                      "value": "<integer>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "WaitTimeSeconds",
+                      "value": "<integer>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "ReceiveRequestAttemptId",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Messages\": [\n    {\n      \"MessageId\": \"string\",\n      \"ReceiptHandle\": \"string\",\n      \"MD5OfBody\": \"string\",\n      \"Body\": \"string\",\n      \"Attributes\": {},\n      \"MessageAttributes\": {}\n    },\n    {\n      \"MessageId\": \"string\",\n      \"ReceiptHandle\": \"string\",\n      \"MD5OfBody\": \"string\",\n      \"Body\": \"string\",\n      \"Attributes\": {},\n      \"MessageAttributes\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a9deb0ad-63c1-48fd-8b96-2c215347acef",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "_aws",
+                    "sqs",
+                    "messages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "QueueUrl",
+                      "value": "<uri>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "AttributeNames",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "AttributeNames",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "MessageSystemAttributeNames",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "MessageSystemAttributeNames",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "MessageAttributeNames",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "MessageAttributeNames",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "MaxNumberOfMessages",
+                      "value": "<integer>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "VisibilityTimeout",
+                      "value": "<integer>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "WaitTimeSeconds",
+                      "value": "<integer>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "ReceiveRequestAttemptId",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "43431cc9-9c45-4f05-a681-a9d8f10e6976",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "_aws",
+                    "sqs",
+                    "messages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "QueueUrl",
+                      "value": "<uri>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "AttributeNames",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "AttributeNames",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "MessageSystemAttributeNames",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "MessageSystemAttributeNames",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "MessageAttributeNames",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "MessageAttributeNames",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "MaxNumberOfMessages",
+                      "value": "<integer>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "VisibilityTimeout",
+                      "value": "<integer>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "WaitTimeSeconds",
+                      "value": "<integer>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "ReceiveRequestAttemptId",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5209375f-079d-4932-bf9a-75fa89fe72d8",
+          "name": "list all sqs messages",
+          "request": {
+            "name": "list all sqs messages",
+            "description": {
+              "content": "List SQS queue messages without side effects",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "_aws",
+                "sqs",
+                "messages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "QueueUrl",
+                  "value": "<string>",
+                  "description": "SQS queue URL"
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b7a12502-0784-4239-a550-5df8e46624a4",
+              "name": "SQS queue messages",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "_aws",
+                    "sqs",
+                    "messages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "QueueUrl",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Messages\": [\n    {\n      \"MessageId\": \"string\",\n      \"ReceiptHandle\": \"string\",\n      \"MD5OfBody\": \"string\",\n      \"Body\": \"string\",\n      \"Attributes\": {},\n      \"MessageAttributes\": {}\n    },\n    {\n      \"MessageId\": \"string\",\n      \"ReceiptHandle\": \"string\",\n      \"MD5OfBody\": \"string\",\n      \"Body\": \"string\",\n      \"Attributes\": {},\n      \"MessageAttributes\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "507e069e-4af4-4896-b534-a6a9ac0e17bf",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "_aws",
+                    "sqs",
+                    "messages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "QueueUrl",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2713e71a-1bc5-4631-aa4b-ff2d57e632d6",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "_aws",
+                    "sqs",
+                    "messages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "QueueUrl",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c5b00a86-243a-4930-9954-b7f38a128b53",
+          "name": "get cloudwatch metrics",
+          "request": {
+            "name": "get cloudwatch metrics",
+            "description": {
+              "content": "Retrieve CloudWatch metrics",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "_aws",
+                "cloudwatch",
+                "metrics",
+                "raw"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7295817d-bab5-44d3-9a2d-37ff8fbf8f58",
+              "name": "CloudWatch metrics",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "_aws",
+                    "cloudwatch",
+                    "metrics",
+                    "raw"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"metrics\": [\n    {\n      \"ns\": \"string\",\n      \"n\": \"string\",\n      \"v\": \"string\",\n      \"t\": \"1982-01-09T13:03:23.945Z\",\n      \"d\": [\n        {\n          \"n\": \"string\",\n          \"v\": \"string\"\n        },\n        {\n          \"n\": \"string\",\n          \"v\": \"string\"\n        }\n      ],\n      \"account\": \"string\",\n      \"region\": \"string\"\n    },\n    {\n      \"ns\": \"string\",\n      \"n\": \"string\",\n      \"v\": \"string\",\n      \"t\": \"1946-09-02T02:14:19.895Z\",\n      \"d\": [\n        {\n          \"n\": \"string\",\n          \"v\": \"string\"\n        },\n        {\n          \"n\": \"string\",\n          \"v\": \"string\"\n        }\n      ],\n      \"account\": \"string\",\n      \"region\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9eae929e-a740-445f-86c5-04440118d4e1",
+          "name": "delete ddb expired items",
+          "request": {
+            "name": "delete ddb expired items",
+            "description": {
+              "content": "Delete expired items from TTL-enabled DynamoDB tables",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "_aws",
+                "dynamodb",
+                "expired"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4d529b42-44d0-4d1e-98e5-1ac64196ae18",
+              "name": "Operation was successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "_aws",
+                    "dynamodb",
+                    "expired"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ExpiredItems\": 860\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a9ce3833-ff03-4019-b143-ffb868940875",
+          "name": "trigger event bridge rule",
+          "request": {
+            "name": "trigger event bridge rule",
+            "description": {
+              "content": "Trigger a scheduled EventBridge rule",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "_aws",
+                "events",
+                "rules",
+                ":rule_arn",
+                "trigger"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "rule_arn",
+                  "description": "(Required) EventBridge rule ARN"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c1d1af9b-2667-460f-a843-e594c0490923",
+              "name": "EventBridge rule was triggered",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "_aws",
+                    "events",
+                    "rules",
+                    ":rule_arn",
+                    "trigger"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "rule_arn",
+                      "description": "(Required) EventBridge rule ARN"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8bdfece8-58d7-4faa-96d6-5f8e51be14d2",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "_aws",
+                    "events",
+                    "rules",
+                    ":rule_arn",
+                    "trigger"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "rule_arn",
+                      "description": "(Required) EventBridge rule ARN"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9c7ef3f8-c8b1-4c62-9da0-d06491610eac",
+          "name": "get lambda init",
+          "request": {
+            "name": "get lambda init",
+            "description": {
+              "content": "Retrieve Lambda runtime init binary",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "_aws",
+                "lambda",
+                "init"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/octet-stream"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a96a6700-bc3b-4e29-b703-4f5577fa88be",
+              "name": "Lambda runtime init binary",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "_aws",
+                    "lambda",
+                    "init"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/octet-stream"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/octet-stream"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e6b7907d-04d6-44dc-9fe8-4c6fe1f3cea9",
+          "name": "get lambda runtimes",
+          "request": {
+            "name": "get lambda runtimes",
+            "description": {
+              "content": "List available Lambda runtimes",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "_aws",
+                "lambda",
+                "runtimes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "supported"
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "13768f85-dd48-4056-8598-16ac6a9fe22c",
+              "name": "Available Lambda runtimes",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "_aws",
+                    "lambda",
+                    "runtimes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "supported"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Runtimes\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "27afeb93-519c-4360-9575-b379ce8aa7d4",
+          "name": "discard ses messages",
+          "request": {
+            "name": "discard ses messages",
+            "description": {
+              "content": "Discard sent SES messages",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "_aws",
+                "ses"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<string>",
+                  "description": "Filter for the `id` field in SES message"
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "89b93ee0-00f2-4201-9185-beda5d986540",
+              "name": "Message was successfully discarded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "_aws",
+                    "ses"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "933583b1-c006-48a2-8920-0b3ca11c7ae4",
+          "name": "get ses messages",
+          "request": {
+            "name": "get ses messages",
+            "description": {
+              "content": "Retrieve sent SES messages",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "_aws",
+                "ses"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<string>",
+                  "description": "Filter for the `id` field in SES message"
+                },
+                {
+                  "disabled": false,
+                  "key": "email",
+                  "value": "<string>",
+                  "description": "Filter for the `source` field in SES message"
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d279e7eb-cbc9-4874-a38b-bd801b414667",
+              "name": "List of sent messages",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "_aws",
+                    "ses"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "email",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"messages\": [\n    {\n      \"Id\": \"string\",\n      \"Region\": \"string\",\n      \"Timestamp\": \"string\",\n      \"Source\": \"string\",\n      \"Body\": {\n        \"text_part\": \"string\",\n        \"html_part\": \"string\"\n      },\n      \"Destination\": {\n        \"ToAddresses\": [\n          \"gyxRO@GvB.knu\",\n          \"LBt@NlcGlalGsRkoGramTlRuHbBiZa.tvws\"\n        ],\n        \"CcAddresses\": [\n          \"fJtI5@sbsSVSUGkSxLP.xs\",\n          \"BUNn0almV@ALUAWXJXbAtvmspvM.ue\"\n        ],\n        \"BccAddresses\": [\n          \"zAkvaV@eUej.bky\",\n          \"CH8gICMdJ4qmaQz@SPaFuhyKLyIJQdMjCzIymmrhaszovwWS.zgjj\"\n        ]\n      },\n      \"RawData\": \"string\",\n      \"Subject\": \"string\",\n      \"Template\": \"string\",\n      \"TemplateData\": \"string\"\n    },\n    {\n      \"Id\": \"string\",\n      \"Region\": \"string\",\n      \"Timestamp\": \"string\",\n      \"Source\": \"string\",\n      \"Body\": {\n        \"text_part\": \"string\",\n        \"html_part\": \"string\"\n      },\n      \"Destination\": {\n        \"ToAddresses\": [\n          \"J4ex@WpRabfBCXASFgOTftxD.eoy\",\n          \"mP-XI-ioJY@klNvTBzw.bw\"\n        ],\n        \"CcAddresses\": [\n          \"5rk6v@nqlKDgNIZewfOCUXKKsTBtBJ.mezh\",\n          \"CoVkvy@CcpKBQhYspozDeGvcDyCyWniFzgNCgB.ez\"\n        ],\n        \"BccAddresses\": [\n          \"QHvr1@KeJENOcggXXVBggqWahlidfSy.gsru\",\n          \"986r5o1nqLjEg@UdobPtsdZxvIKjSxvfSv.svhu\"\n        ]\n      },\n      \"RawData\": \"string\",\n      \"Subject\": \"string\",\n      \"Template\": \"string\",\n      \"TemplateData\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "02ab484d-754e-4141-b2e0-cd41e595dcd9",
+          "name": "discard sns endpoint messages",
+          "request": {
+            "name": "discard sns endpoint messages",
+            "description": {
+              "content": "Discard the messages published to a platform endpoint via SNS",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "_aws",
+                "sns",
+                "platform-endpoint-messages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "accountId",
+                  "value": "000000000000",
+                  "description": "`accountId` field of the resource"
+                },
+                {
+                  "disabled": false,
+                  "key": "region",
+                  "value": "us-east-1",
+                  "description": "`region` field of the resource"
+                },
+                {
+                  "disabled": false,
+                  "key": "endpointArn",
+                  "value": "<string>",
+                  "description": "`endpointArn` field of the resource"
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "59db1653-f81e-4b31-b9a6-93b7ba64b0e2",
+              "name": "Platform endpoint message was discarded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "_aws",
+                    "sns",
+                    "platform-endpoint-messages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "accountId",
+                      "value": "000000000000"
+                    },
+                    {
+                      "key": "region",
+                      "value": "us-east-1"
+                    },
+                    {
+                      "key": "endpointArn",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "efa71069-49f0-4410-acd9-75efa6527b22",
+          "name": "get sns endpoint messages",
+          "request": {
+            "name": "get sns endpoint messages",
+            "description": {
+              "content": "Retrieve the messages sent to a platform endpoint via SNS",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "_aws",
+                "sns",
+                "platform-endpoint-messages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "accountId",
+                  "value": "000000000000",
+                  "description": "`accountId` field of the resource"
+                },
+                {
+                  "disabled": false,
+                  "key": "region",
+                  "value": "us-east-1",
+                  "description": "`region` field of the resource"
+                },
+                {
+                  "disabled": false,
+                  "key": "endpointArn",
+                  "value": "<string>",
+                  "description": "`endpointArn` field of the resource"
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "90ba8537-8c75-4121-a7d8-5f6e4cbbdf41",
+              "name": "SNS messages via retrospective access",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "_aws",
+                    "sns",
+                    "platform-endpoint-messages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "accountId",
+                      "value": "000000000000"
+                    },
+                    {
+                      "key": "region",
+                      "value": "us-east-1"
+                    },
+                    {
+                      "key": "endpointArn",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"region\": \"string\",\n  \"platform_endpoint_messages\": {\n    \"key_0\": [\n      {\n        \"TargetArn\": \"string\",\n        \"TopicArn\": \"string\",\n        \"Message\": \"string\",\n        \"MessageAttributes\": {},\n        \"MessageStructure\": \"string\",\n        \"Subject\": null,\n        \"MessageId\": \"string\"\n      },\n      {\n        \"TargetArn\": \"string\",\n        \"TopicArn\": \"string\",\n        \"Message\": \"string\",\n        \"MessageAttributes\": {},\n        \"MessageStructure\": \"string\",\n        \"Subject\": \"string\",\n        \"MessageId\": \"string\"\n      }\n    ],\n    \"key_1\": [\n      {\n        \"TargetArn\": \"string\",\n        \"TopicArn\": \"string\",\n        \"Message\": \"string\",\n        \"MessageAttributes\": {},\n        \"MessageStructure\": \"string\",\n        \"Subject\": null,\n        \"MessageId\": \"string\"\n      },\n      {\n        \"TargetArn\": \"string\",\n        \"TopicArn\": \"string\",\n        \"Message\": \"string\",\n        \"MessageAttributes\": {},\n        \"MessageStructure\": \"string\",\n        \"Subject\": \"string\",\n        \"MessageId\": \"string\"\n      }\n    ],\n    \"key_2\": [\n      {\n        \"TargetArn\": \"string\",\n        \"TopicArn\": \"string\",\n        \"Message\": \"string\",\n        \"MessageAttributes\": {},\n        \"MessageStructure\": \"string\",\n        \"Subject\": null,\n        \"MessageId\": \"string\"\n      },\n      {\n        \"TargetArn\": \"string\",\n        \"TopicArn\": \"string\",\n        \"Message\": \"string\",\n        \"MessageAttributes\": {},\n        \"MessageStructure\": \"string\",\n        \"Subject\": \"string\",\n        \"MessageId\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "28a0db41-2957-46e3-b2a3-9847dadb4115",
+          "name": "discard sns sms messages",
+          "request": {
+            "name": "discard sns sms messages",
+            "description": {
+              "content": "Discard SNS SMS messages",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "_aws",
+                "sns",
+                "sms-messages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "accountId",
+                  "value": "000000000000",
+                  "description": "`accountId` field of the resource"
+                },
+                {
+                  "disabled": false,
+                  "key": "region",
+                  "value": "us-east-1",
+                  "description": "`region` field of the resource"
+                },
+                {
+                  "disabled": false,
+                  "key": "phoneNumber",
+                  "value": "<string>",
+                  "description": "`phoneNumber` field of the resource"
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "733dc5c2-4223-41a7-bc59-2caa43fc9dd3",
+              "name": "SMS message was discarded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "_aws",
+                    "sns",
+                    "sms-messages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "accountId",
+                      "value": "000000000000"
+                    },
+                    {
+                      "key": "region",
+                      "value": "us-east-1"
+                    },
+                    {
+                      "key": "phoneNumber",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "89e09749-7671-4087-93e0-acd22ff02bc5",
+          "name": "get sns sms messages",
+          "request": {
+            "name": "get sns sms messages",
+            "description": {
+              "content": "Retrieve SNS SMS messages",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "_aws",
+                "sns",
+                "sms-messages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "accountId",
+                  "value": "000000000000",
+                  "description": "`accountId` field of the resource"
+                },
+                {
+                  "disabled": false,
+                  "key": "region",
+                  "value": "us-east-1",
+                  "description": "`region` field of the resource"
+                },
+                {
+                  "disabled": false,
+                  "key": "phoneNumber",
+                  "value": "<string>",
+                  "description": "`phoneNumber` field of the resource"
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "613a7045-245c-47ef-be6d-ccdd891f1224",
+              "name": "SNS messages via retrospective access",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "_aws",
+                    "sns",
+                    "sms-messages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "accountId",
+                      "value": "000000000000"
+                    },
+                    {
+                      "key": "region",
+                      "value": "us-east-1"
+                    },
+                    {
+                      "key": "phoneNumber",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"region\": \"string\",\n  \"sms_messages\": {\n    \"key_0\": [\n      {\n        \"PhoneNumber\": \"string\",\n        \"TopicArn\": \"string\",\n        \"SubscriptionArn\": null,\n        \"MessageId\": \"string\",\n        \"Message\": \"string\",\n        \"MessageAttributes\": {},\n        \"MessageStructure\": \"string\",\n        \"Subject\": null\n      },\n      {\n        \"PhoneNumber\": \"string\",\n        \"TopicArn\": null,\n        \"SubscriptionArn\": null,\n        \"MessageId\": \"string\",\n        \"Message\": \"string\",\n        \"MessageAttributes\": {},\n        \"MessageStructure\": \"string\",\n        \"Subject\": \"string\"\n      }\n    ],\n    \"key_1\": [\n      {\n        \"PhoneNumber\": \"string\",\n        \"TopicArn\": \"string\",\n        \"SubscriptionArn\": \"string\",\n        \"MessageId\": \"string\",\n        \"Message\": \"string\",\n        \"MessageAttributes\": {},\n        \"MessageStructure\": null,\n        \"Subject\": \"string\"\n      },\n      {\n        \"PhoneNumber\": \"string\",\n        \"TopicArn\": null,\n        \"SubscriptionArn\": null,\n        \"MessageId\": \"string\",\n        \"Message\": \"string\",\n        \"MessageAttributes\": {},\n        \"MessageStructure\": null,\n        \"Subject\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "978db55e-a970-45f5-b99f-4249d243dbf4",
+          "name": "get sns subscription token",
+          "request": {
+            "name": "get sns subscription token",
+            "description": {
+              "content": "Retrieve SNS subscription token for confirmation",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "_aws",
+                "sns",
+                "subscription-tokens",
+                ":subscription_arn"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscription_arn",
+                  "description": "(Required) `subscriptionArn` resource of subscription token"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "71b63d4c-4945-4745-976d-cc88a513dca4",
+              "name": "Subscription token",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "_aws",
+                    "sns",
+                    "subscription-tokens",
+                    ":subscription_arn"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscription_arn",
+                      "description": "(Required) `subscriptionArn` resource of subscription token"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"subscription_token\": \"string\",\n  \"subscription_arn\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2a2b2929-d7c9-4a8b-8d51-e52de55a81d9",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "_aws",
+                    "sns",
+                    "subscription-tokens",
+                    ":subscription_arn"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscription_arn",
+                      "description": "(Required) `subscriptionArn` resource of subscription token"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"subscription_arn\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1992ef42-d518-4106-8964-0d44efc6b4f0",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "_aws",
+                    "sns",
+                    "subscription-tokens",
+                    ":subscription_arn"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscription_arn",
+                      "description": "(Required) `subscriptionArn` resource of subscription token"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"subscription_arn\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4e5abb0a-8ab9-412d-84d3-bc38b2b798c0",
+          "name": "list sqs messages",
+          "request": {
+            "name": "list sqs messages",
+            "description": {
+              "content": "List SQS messages without side effects",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "_aws",
+                "sqs",
+                "messages",
+                ":region",
+                ":account_id",
+                ":queue_name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "region",
+                  "description": "(Required) SQS queue region"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "account_id",
+                  "description": "(Required) SQS queue account ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "queue_name",
+                  "description": "(Required) SQS queue name"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c9757b86-43ec-40d1-a025-2a9767ac8d83",
+              "name": "SQS queue messages",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "_aws",
+                    "sqs",
+                    "messages",
+                    ":region",
+                    ":account_id",
+                    ":queue_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "region",
+                      "description": "(Required) SQS queue region"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "account_id",
+                      "description": "(Required) SQS queue account ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "queue_name",
+                      "description": "(Required) SQS queue name"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Messages\": [\n    {\n      \"MessageId\": \"string\",\n      \"ReceiptHandle\": \"string\",\n      \"MD5OfBody\": \"string\",\n      \"Body\": \"string\",\n      \"Attributes\": {},\n      \"MessageAttributes\": {}\n    },\n    {\n      \"MessageId\": \"string\",\n      \"ReceiptHandle\": \"string\",\n      \"MD5OfBody\": \"string\",\n      \"Body\": \"string\",\n      \"Attributes\": {},\n      \"MessageAttributes\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2ec6bb61-8056-497b-9acd-129a5be6fdc9",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "_aws",
+                    "sqs",
+                    "messages",
+                    ":region",
+                    ":account_id",
+                    ":queue_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "region",
+                      "description": "(Required) SQS queue region"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "account_id",
+                      "description": "(Required) SQS queue account ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "queue_name",
+                      "description": "(Required) SQS queue name"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a6ec1f8a-60a6-40f2-bd26-9adc8b478cdb",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "_aws",
+                    "sqs",
+                    "messages",
+                    ":region",
+                    ":account_id",
+                    ":queue_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "region",
+                      "description": "(Required) SQS queue region"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "account_id",
+                      "description": "(Required) SQS queue account ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "queue_name",
+                      "description": "(Required) SQS queue name"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "4566",
+      "key": "port"
+    },
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "localhost.localstack.cloud",
+      "key": "host"
+    },
+    {
+      "type": "string",
+      "value": "http://{{host}}:{{port}}",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f348ed78-9aab-4f92-9d82-ddf2c156b6b9",
+    "name": "LocalStack REST API for Community Aws API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Contact Support:\n Name: LocalStack Support\n Email: info@localstack.cloud",
+      "type": "text/plain"
+    }
+  }
+}
