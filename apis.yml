@@ -1,13 +1,12 @@
 aid: localstack
 name: LocalStack
-description: >-
-  LocalStack is a cloud service emulator that runs in a single container on your laptop or in your
-  CI environment, providing a local test and mocking framework for developing cloud applications
-  against AWS, Snowflake, and Azure without provisioning real infrastructure. It ships a CLI, a
-  Docker image, IaC integrations (Terraform, CDK, SAM, CloudFormation, Pulumi), an official MCP
-  server and Agent Skills, and a local REST API for diagnostics, health checks, service
-  introspection, and retrospective access to emulated AWS resources (SES, SNS, SQS, Lambda,
-  DynamoDB, EventBridge, CloudWatch). Backed by GGV Capital.
+description: LocalStack is a cloud service emulator that runs in a single container on your laptop or
+  in your CI environment, providing a local test and mocking framework for developing cloud applications
+  against AWS, Snowflake, and Azure without provisioning real infrastructure. It ships a CLI, a Docker
+  image, IaC integrations (Terraform, CDK, SAM, CloudFormation, Pulumi), an official MCP server and Agent
+  Skills, and a local REST API for diagnostics, health checks, service introspection, and retrospective
+  access to emulated AWS resources (SES, SNS, SQS, Lambda, DynamoDB, EventBridge, CloudWatch). Backed
+  by GGV Capital.
 url: https://raw.githubusercontent.com/api-evangelist/localstack/refs/heads/main/apis.yml
 deliveryModel:
   model: saas
@@ -44,7 +43,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.23'
 created: '2026-07-17'
-modified: '2026-07-20'
+modified: '2026-09-16'
 tags:
 - Company
 - Developer Tools
@@ -69,7 +68,7 @@ apis:
   - type: OpenAPI
     url: openapi/localstack-aws-api-openapi.yml
 - aid: localstack:localstack-localstack-api
-  name: LocalStack localstack API
+  name: LocalStack API
   description: The localstack API from LocalStack — 8 operation(s) for localstack.
   humanURL: https://docs.localstack.cloud/references/internal-endpoints/
   baseURL: http://localhost.localstack.cloud:4566
