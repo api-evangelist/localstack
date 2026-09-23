@@ -1,8 +1,7 @@
 {
   "provider": "localstack",
   "sources": [
-    "localstack-aws-api-openapi.yml",
-    "localstack-localstack-api-openapi.yml"
+    "_original/localstack-openapi-original.yml"
   ],
   "outputs": [
     "localstack-aws-api-openapi.yml",
@@ -11,6 +10,17 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "localstack-openapi-original.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "localstack-openapi-original.yml: tagged paths POST /_aws/sqs/messages -> Aws",
+    "localstack-openapi-original.yml: declared missing tag: Aws",
+    "localstack-openapi-original.yml: declared missing tag: aws",
+    "localstack-openapi-original.yml: declared missing tag: localstack",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "localstack-aws-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "localstack-localstack-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
