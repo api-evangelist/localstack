@@ -507,6 +507,49 @@ components:
       required:
       - metrics
       type: object
+    SNSPlatformEndpointMessage:
+      type: object
+      description: Message sent to a platform endpoint via SNS
+      additionalProperties: false
+      properties:
+        TargetArn:
+          type: string
+        TopicArn:
+          type: string
+        Message:
+          type: string
+        MessageAttributes:
+          type: object
+        MessageStructure:
+          type: string
+        Subject:
+          type:
+          - string
+          - 'null'
+        MessageId:
+          type: string
+    SNSPlatformEndpointMessages:
+      type: object
+      description: 'Messages sent to the platform endpoint retrieved via the retrospective endpoint.
+
+        The endpoint ARN is the key with a list of messages as value.
+
+        '
+      additionalProperties:
+        type: array
+        items:
+          $ref: '#/components/schemas/SNSPlatformEndpointMessage'
+    SMSMessages:
+      type: object
+      description: 'SMS messages retrieved via the retrospective endpoint.
+
+        The phone number is the key with a list of messages as value.
+
+        '
+      additionalProperties:
+        type: array
+        items:
+          $ref: '#/components/schemas/SNSMessage'
     SESDestination:
       type: object
       description: Possible destination of a SES message
@@ -527,6 +570,19 @@ components:
             type: string
             format: email
       additionalProperties: false
+    SNSPlatformEndpointResponse:
+      type: object
+      additionalProperties: false
+      description: Response payload for the /_aws/sns/platform-endpoint-messages endpoint
+      properties:
+        region:
+          type: string
+          description: The AWS region, e.g., us-east-1
+        platform_endpoint_messages:
+          $ref: '#/components/schemas/SNSPlatformEndpointMessages'
+      required:
+      - region
+      - platform_endpoint_messages
     SNSMessage:
       type: object
       description: Message sent via SNS
@@ -555,75 +611,6 @@ components:
           type:
           - string
           - 'null'
-    SNSPlatformEndpointResponse:
-      type: object
-      additionalProperties: false
-      description: Response payload for the /_aws/sns/platform-endpoint-messages endpoint
-      properties:
-        region:
-          type: string
-          description: The AWS region, e.g., us-east-1
-        platform_endpoint_messages:
-          $ref: '#/components/schemas/SNSPlatformEndpointMessages'
-      required:
-      - region
-      - platform_endpoint_messages
-    SMSMessages:
-      type: object
-      description: 'SMS messages retrieved via the retrospective endpoint.
-
-        The phone number is the key with a list of messages as value.
-
-        '
-      additionalProperties:
-        type: array
-        items:
-          $ref: '#/components/schemas/SNSMessage'
-    SNSPlatformEndpointMessages:
-      type: object
-      description: 'Messages sent to the platform endpoint retrieved via the retrospective endpoint.
-
-        The endpoint ARN is the key with a list of messages as value.
-
-        '
-      additionalProperties:
-        type: array
-        items:
-          $ref: '#/components/schemas/SNSPlatformEndpointMessage'
-    SNSSMSMessagesResponse:
-      type: object
-      additionalProperties: false
-      description: Response payload for the /_aws/sns/sms-messages endpoint
-      properties:
-        region:
-          type: string
-          description: The AWS region, e.g., us-east-1
-        sms_messages:
-          $ref: '#/components/schemas/SMSMessages'
-      required:
-      - region
-      - sms_messages
-    SNSPlatformEndpointMessage:
-      type: object
-      description: Message sent to a platform endpoint via SNS
-      additionalProperties: false
-      properties:
-        TargetArn:
-          type: string
-        TopicArn:
-          type: string
-        Message:
-          type: string
-        MessageAttributes:
-          type: object
-        MessageStructure:
-          type: string
-        Subject:
-          type:
-          - string
-          - 'null'
-        MessageId:
-          type: string
     SesSentEmail:
       additionalProperties: false
       properties:
@@ -672,11 +659,31 @@ components:
       - error
       - subscription_arn
       type: object
+    SNSSMSMessagesResponse:
+      type: object
+      additionalProperties: false
+      description: Response payload for the /_aws/sns/sms-messages endpoint
+      properties:
+        region:
+          type: string
+          description: The AWS region, e.g., us-east-1
+        sms_messages:
+          $ref: '#/components/schemas/SMSMessages'
+      required:
+      - region
+      - sms_messages
   parameters:
-    SnsPhoneNumber:
-      description: '`phoneNumber` field of the resource'
+    SesEmailFilter:
+      description: Filter for the `source` field in SES message
       in: query
-      name: phoneNumber
+      name: email
+      required: false
+      schema:
+        type: string
+    SesIdFilter:
+      description: Filter for the `id` field in SES message
+      in: query
+      name: id
       required: false
       schema:
         type: string
@@ -687,18 +694,10 @@ components:
       required: false
       schema:
         type: string
-    SnsRegion:
-      description: '`region` field of the resource'
+    SnsPhoneNumber:
+      description: '`phoneNumber` field of the resource'
       in: query
-      name: region
-      required: false
-      schema:
-        default: us-east-1
-        type: string
-    SesEmailFilter:
-      description: Filter for the `source` field in SES message
-      in: query
-      name: email
+      name: phoneNumber
       required: false
       schema:
         type: string
@@ -710,12 +709,13 @@ components:
       schema:
         default: '000000000000'
         type: string
-    SesIdFilter:
-      description: Filter for the `id` field in SES message
+    SnsRegion:
+      description: '`region` field of the resource'
       in: query
-      name: id
+      name: region
       required: false
       schema:
+        default: us-east-1
         type: string
 externalDocs:
   description: LocalStack Documentation
