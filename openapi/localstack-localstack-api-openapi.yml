@@ -386,38 +386,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    SessionInfo:
-      additionalProperties: false
-      properties:
-        edition:
-          type: string
-        is_docker:
-          type: boolean
-        is_license_activated:
-          type: boolean
-        machine_id:
-          type: string
-        server_time_utc:
-          type: string
-        session_id:
-          type: string
-        system:
-          type: string
-        uptime:
-          type: integer
-        version:
-          type: string
-      required:
-      - version
-      - edition
-      - is_license_activated
-      - session_id
-      - machine_id
-      - system
-      - is_docker
-      - server_time_utc
-      - uptime
-      type: object
     InitScripts:
       additionalProperties: false
       properties:
@@ -482,6 +450,38 @@ components:
       required:
       - completed
       - scripts
+      type: object
+    SessionInfo:
+      additionalProperties: false
+      properties:
+        edition:
+          type: string
+        is_docker:
+          type: boolean
+        is_license_activated:
+          type: boolean
+        machine_id:
+          type: string
+        server_time_utc:
+          type: string
+        session_id:
+          type: string
+        system:
+          type: string
+        uptime:
+          type: integer
+        version:
+          type: string
+      required:
+      - version
+      - edition
+      - is_license_activated
+      - session_id
+      - machine_id
+      - system
+      - is_docker
+      - server_time_utc
+      - uptime
       type: object
 externalDocs:
   description: LocalStack Documentation

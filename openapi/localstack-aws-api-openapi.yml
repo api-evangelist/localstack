@@ -394,29 +394,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Message'
-    Message:
-      type: object
-      properties:
-        MessageId:
-          type:
-          - string
-          - 'null'
-        ReceiptHandle:
-          type:
-          - string
-          - 'null'
-        MD5OfBody:
-          type:
-          - string
-          - 'null'
-        Body:
-          type:
-          - string
-          - 'null'
-        Attributes:
-          type: object
-        MessageAttributes:
-          type: object
     ReceiveMessageRequest:
       type: object
       description: https://github.com/boto/botocore/blob/develop/botocore/data/sqs/2012-11-05/service-2.json
@@ -446,6 +423,42 @@ components:
           type: integer
         ReceiveRequestAttemptId:
           type: string
+    Message:
+      type: object
+      properties:
+        MessageId:
+          type:
+          - string
+          - 'null'
+        ReceiptHandle:
+          type:
+          - string
+          - 'null'
+        MD5OfBody:
+          type:
+          - string
+          - 'null'
+        Body:
+          type:
+          - string
+          - 'null'
+        Attributes:
+          type: object
+        MessageAttributes:
+          type: object
+    SNSSMSMessagesResponse:
+      type: object
+      additionalProperties: false
+      description: Response payload for the /_aws/sns/sms-messages endpoint
+      properties:
+        region:
+          type: string
+          description: The AWS region, e.g., us-east-1
+        sms_messages:
+          $ref: '#/components/schemas/SMSMessages'
+      required:
+      - region
+      - sms_messages
     CloudWatchMetrics:
       additionalProperties: false
       properties:
@@ -507,38 +520,45 @@ components:
       required:
       - metrics
       type: object
-    SNSPlatformEndpointMessage:
+    SNSMessage:
       type: object
-      description: Message sent to a platform endpoint via SNS
-      additionalProperties: false
+      description: Message sent via SNS
       properties:
-        TargetArn:
+        PhoneNumber:
           type: string
         TopicArn:
+          type:
+          - string
+          - 'null'
+        SubscriptionArn:
+          type:
+          - string
+          - 'null'
+        MessageId:
           type: string
         Message:
           type: string
         MessageAttributes:
           type: object
         MessageStructure:
-          type: string
+          type:
+          - string
+          - 'null'
         Subject:
           type:
           - string
           - 'null'
-        MessageId:
+    SnsSubscriptionTokenError:
+      additionalProperties: false
+      properties:
+        error:
           type: string
-    SNSPlatformEndpointMessages:
+        subscription_arn:
+          type: string
+      required:
+      - error
+      - subscription_arn
       type: object
-      description: 'Messages sent to the platform endpoint retrieved via the retrospective endpoint.
-
-        The endpoint ARN is the key with a list of messages as value.
-
-        '
-      additionalProperties:
-        type: array
-        items:
-          $ref: '#/components/schemas/SNSPlatformEndpointMessage'
     SMSMessages:
       type: object
       description: 'SMS messages retrieved via the retrospective endpoint.
@@ -570,6 +590,38 @@ components:
             type: string
             format: email
       additionalProperties: false
+    SNSPlatformEndpointMessages:
+      type: object
+      description: 'Messages sent to the platform endpoint retrieved via the retrospective endpoint.
+
+        The endpoint ARN is the key with a list of messages as value.
+
+        '
+      additionalProperties:
+        type: array
+        items:
+          $ref: '#/components/schemas/SNSPlatformEndpointMessage'
+    SNSPlatformEndpointMessage:
+      type: object
+      description: Message sent to a platform endpoint via SNS
+      additionalProperties: false
+      properties:
+        TargetArn:
+          type: string
+        TopicArn:
+          type: string
+        Message:
+          type: string
+        MessageAttributes:
+          type: object
+        MessageStructure:
+          type: string
+        Subject:
+          type:
+          - string
+          - 'null'
+        MessageId:
+          type: string
     SNSPlatformEndpointResponse:
       type: object
       additionalProperties: false
@@ -583,34 +635,6 @@ components:
       required:
       - region
       - platform_endpoint_messages
-    SNSMessage:
-      type: object
-      description: Message sent via SNS
-      properties:
-        PhoneNumber:
-          type: string
-        TopicArn:
-          type:
-          - string
-          - 'null'
-        SubscriptionArn:
-          type:
-          - string
-          - 'null'
-        MessageId:
-          type: string
-        Message:
-          type: string
-        MessageAttributes:
-          type: object
-        MessageStructure:
-          type:
-          - string
-          - 'null'
-        Subject:
-          type:
-          - string
-          - 'null'
     SesSentEmail:
       additionalProperties: false
       properties:
@@ -648,38 +672,7 @@ components:
       - Timestamp
       - Source
       type: object
-    SnsSubscriptionTokenError:
-      additionalProperties: false
-      properties:
-        error:
-          type: string
-        subscription_arn:
-          type: string
-      required:
-      - error
-      - subscription_arn
-      type: object
-    SNSSMSMessagesResponse:
-      type: object
-      additionalProperties: false
-      description: Response payload for the /_aws/sns/sms-messages endpoint
-      properties:
-        region:
-          type: string
-          description: The AWS region, e.g., us-east-1
-        sms_messages:
-          $ref: '#/components/schemas/SMSMessages'
-      required:
-      - region
-      - sms_messages
   parameters:
-    SesEmailFilter:
-      description: Filter for the `source` field in SES message
-      in: query
-      name: email
-      required: false
-      schema:
-        type: string
     SesIdFilter:
       description: Filter for the `id` field in SES message
       in: query
@@ -687,12 +680,13 @@ components:
       required: false
       schema:
         type: string
-    SnsEndpointArn:
-      description: '`endpointArn` field of the resource'
+    SnsRegion:
+      description: '`region` field of the resource'
       in: query
-      name: endpointArn
+      name: region
       required: false
       schema:
+        default: us-east-1
         type: string
     SnsPhoneNumber:
       description: '`phoneNumber` field of the resource'
@@ -709,13 +703,19 @@ components:
       schema:
         default: '000000000000'
         type: string
-    SnsRegion:
-      description: '`region` field of the resource'
+    SesEmailFilter:
+      description: Filter for the `source` field in SES message
       in: query
-      name: region
+      name: email
       required: false
       schema:
-        default: us-east-1
+        type: string
+    SnsEndpointArn:
+      description: '`endpointArn` field of the resource'
+      in: query
+      name: endpointArn
+      required: false
+      schema:
         type: string
 externalDocs:
   description: LocalStack Documentation
