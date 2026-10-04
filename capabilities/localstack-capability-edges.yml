@@ -1,0 +1,27 @@
+slug: localstack
+provider: LocalStack
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Aws
+  spec_file: localstack-aws-api-openapi.yml
+  capability_id: BC-4210.20
+  capability_id_l1: BC-4210
+  capability_name: Environment Management
+  confidence: 0.7
+  evidence: '''List all sqs messages'', ''Get ses messages'', ''Trigger event bridge rule'' — LocalStack
+    is ''a local test and mocking framework for developing cloud applications against AWS ... without
+    provisioning real infrastructure'''
+  reason: The endpoints inspect and manipulate emulated AWS service state in a local/CI test environment,
+    which is provisioning and stewardship of non-production environments used for development and integration
+    (BC-4210.20). Could alternatively be read as test tooling (BC-4200.50), hence 0.7.
