@@ -426,31 +426,6 @@ components:
       - completed
       - scripts
       type: object
-    InitScriptsStage:
-      additionalProperties: false
-      properties:
-        completed:
-          type: boolean
-        scripts:
-          items:
-            additionalProperties: false
-            properties:
-              name:
-                type: string
-              stage:
-                type: string
-              state:
-                type: string
-            required:
-            - stage
-            - name
-            - state
-            type: object
-          type: array
-      required:
-      - completed
-      - scripts
-      type: object
     SessionInfo:
       additionalProperties: false
       properties:
@@ -482,6 +457,31 @@ components:
       - is_docker
       - server_time_utc
       - uptime
+      type: object
+    InitScriptsStage:
+      additionalProperties: false
+      properties:
+        completed:
+          type: boolean
+        scripts:
+          items:
+            additionalProperties: false
+            properties:
+              name:
+                type: string
+              stage:
+                type: string
+              state:
+                type: string
+            required:
+            - stage
+            - name
+            - state
+            type: object
+          type: array
+      required:
+      - completed
+      - scripts
       type: object
 externalDocs:
   description: LocalStack Documentation
