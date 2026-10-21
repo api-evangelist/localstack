@@ -4,18 +4,22 @@ checked:
 - https://api.nuget.org/v3
 - https://aws.amazon.com/marketplace/
 - https://azuremarketplace.microsoft.com/
-- https://cdn.winget.microsoft.com/cache
 - https://crates.io/api/v1
-- https://formulae.brew.sh/api/cask.json
-- https://formulae.brew.sh/api/formula.json
-- https://github.com/ScoopInstaller/Extras
-- https://github.com/ScoopInstaller/Main
 - https://github.com/marketplace?type=actions
 - https://proxy.golang.org
 - https://pypi.org/pypi
 - https://registry.npmjs.org
 - https://repo1.maven.org/maven2
 - https://rubygems.org/api/v1
+- https://cdn.winget.microsoft.com/cache
+- https://formulae.brew.sh/api/cask.json
+- https://formulae.brew.sh/api/formula.json
+- https://github.com/ScoopInstaller/Extras
+- https://github.com/ScoopInstaller/Main
+- https://pypi.org/org/{org}/
+- https://pypi.org/pypi/{package}/json
+- docker-hub/integrations/docker-hub-integration-edges.yml
+- eclipse/integrations/eclipse-integration-edges.yml
 marketplace_apps: []
 edges:
 - partner_name: AWS Marketplace
@@ -206,5 +210,87 @@ edges:
     detected: '2026-10-20'
   detected_by: sweep-official-clis.py
   first_seen: '2026-10-20'
+- partner_name: PyPI organization accounts
+  partner: pypi
+  partner_match: register
+  type: register
+  channel: package-registry
+  relationship: distribution-channel
+  direction: third-party
+  evidence: https://pypi.org/org/localstack/
+  category: PyPI organization
+  contract_reference:
+    register: PyPI organization accounts
+    spec_file: null
+    role: pypi-organization
+    registered_name: localstack
+    register_id: https://pypi.org/org/localstack/
+    org_display_name: LocalStack
+    matched_by: verified-package
+    packages_verified:
+    - aws-sam-cli-local
+    - awscli-local
+    - localstack
+    - terraform-local
+    org_projects: 57
+    identity_note: the org is reached through packages sweep-official-sdks / official-clis verified as the provider's
+      own (domain / org leg AND publisher leg); never by the org name
+    signal_note: 'participation only (python): an organization account on PyPI, not a package count'
+    detected_by: sweep-ide-extension-marketplaces.py
+    detected: '2026-10-20'
+  detected_by: sweep-ide-extension-marketplaces.py
+  first_seen: '2026-10-20'
+- partner_name: Docker Hub (docker-verified-publisher)
+  partner: docker-hub
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: docker-verified-publisher
+  evidence: https://hub.docker.com/u/localstack
+  mirror_of: docker-hub/integrations/docker-hub-integration-edges.yml
+  apps:
+  - localstack/localstack
+  - localstack/localstack-pro
+  - localstack/localstack-light
+  - localstack/localstack-full
+  - localstack/ami-amazonlinux
+  - localstack/presto
+  - localstack/sagemaker-tensorflow
+  - localstack/localstack-azure
+  - localstack/lambda-nodejs
+  - localstack/lambda-python
+  - localstack/lambda-ruby
+  - localstack/lambda-java
+  - localstack/lambda-dotnet
+  - localstack/lambda-provided
+  - localstack/lambda-go
+  listing_count: 1
+  detected: '2026-10-20'
+  detected_by: mirror-platform-listings.py
+  category: Docker Verified Publisher
+  badges:
+  - Docker Verified Publisher
+- partner_name: Eclipse Foundation (open-vsx)
+  partner: eclipse
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: open-vsx
+  evidence: https://open-vsx.org/namespace/localstack
+  mirror_of: eclipse/integrations/eclipse-integration-edges.yml
+  apps:
+  - LocalStack Toolkit
+  listing_count: 1
+  detected: '2026-10-20'
+  detected_by: mirror-platform-listings.py
+  category: IDE / developer extension marketplace listing
+  badges:
+  - Verified namespace
 source:
 - https://github.com/marketplace?type=actions
